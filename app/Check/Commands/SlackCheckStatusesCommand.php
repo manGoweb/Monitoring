@@ -130,7 +130,7 @@ class SlackCheckStatusesCommand extends \Symfony\Component\Console\Command\Comma
 				$checkStatusMessage ? ': ' . $checkStatusMessage : ''
 			);
 
-			$this->slackNotifier->notify('#monitoring', $message, $color);
+			$this->slackNotifier->notify($message, $color);
 		}
 
 		return 0;

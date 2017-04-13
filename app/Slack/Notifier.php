@@ -32,12 +32,9 @@ class Notifier
 	}
 
 
-	public function notify(string $channel, string $message, string $color)
+	public function notify(string $message, string $color)
 	{
 		$payload = [
-			'channel' => $channel,
-			'username' => 'Monitoring',
-			'icon_emoji' => ':eye:',
 			'attachments' => [
 				[
 					'text' => $message,
