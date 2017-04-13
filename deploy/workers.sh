@@ -29,7 +29,7 @@ loop-every   60 pd:monitoring:check:publish:rabbit-consumer-checks
 loop-every   60 pd:monitoring:check:slack-check-statuses
 
 loop rabbitmq:consume aliveCheck
-loop rabbitmq:consume dnsCheck
+loop rabbitmq:consume dnsACheck
 loop rabbitmq:consume certificateCheck
 loop rabbitmq:consume feedCheck
 loop rabbitmq:consume rabbitConsumerCheck

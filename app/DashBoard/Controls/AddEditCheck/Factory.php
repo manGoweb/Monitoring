@@ -36,8 +36,8 @@ class Factory
 				$control = new Control($project, $check, new TermCheckProcessor(), $this->formFactory, $this->checksRepository);
 				break;
 
-			case \Pd\Monitoring\Check\ICheck::TYPE_DNS:
-				$control = new Control($project, $check, new DnsCheckProcessor(), $this->formFactory, $this->checksRepository);
+			case \Pd\Monitoring\Check\ICheck::TYPE_DNS_A:
+				$control = new Control($project, $check, new DnsACheckProcessor(), $this->formFactory, $this->checksRepository);
 				break;
 
 			case \Pd\Monitoring\Check\ICheck::TYPE_CERTIFICATE:

@@ -2,7 +2,7 @@
 
 namespace Pd\Monitoring\DashBoard\Controls\AddEditCheck;
 
-class DnsCheckProcessor implements ICheckControlProcessor
+class DnsACheckProcessor implements ICheckControlProcessor
 {
 
 	public function processEntity(\Pd\Monitoring\Check\Check $check, array $data)
@@ -14,7 +14,7 @@ class DnsCheckProcessor implements ICheckControlProcessor
 
 	public function getCheck(): \Pd\Monitoring\Check\Check
 	{
-		return new \Pd\Monitoring\Check\DnsCheck();
+		return new \Pd\Monitoring\Check\DnsACheck();
 	}
 
 

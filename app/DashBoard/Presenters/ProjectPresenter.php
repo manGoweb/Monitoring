@@ -140,7 +140,7 @@ class ProjectPresenter extends BasePresenter
 		$this->template->checks = [
 			new \Pd\Monitoring\Check\AliveCheck(),
 			new \Pd\Monitoring\Check\TermCheck(),
-			new \Pd\Monitoring\Check\DnsCheck(),
+			new \Pd\Monitoring\Check\DnsACheck(),
 			new \Pd\Monitoring\Check\CertificateCheck(),
 			new \Pd\Monitoring\Check\FeedCheck(),
 			new \Pd\Monitoring\Check\RabbitConsumerCheck(),

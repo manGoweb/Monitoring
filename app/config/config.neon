@@ -69,7 +69,7 @@ rabbitmq:
 		aliveCheck:
 			exchange: {name: 'aliveCheck', type: direct}
 			contentType: text/plain
-		dnsCheck:
+		dnsACheck:
 			exchange: {name: 'dnsCheck', type: direct}
 			contentType: text/plain
 		certificateCheck:
@@ -87,10 +87,10 @@ rabbitmq:
 			exchange: {name: 'aliveCheck', type: direct}
 			queue: {name: 'aliveCheck'}
 			callback: [@Pd\Monitoring\Check\Consumers\AliveCheck, process]
-		dnsCheck:
+		dnsACheck:
 			exchange: {name: 'dnsCheck', type: direct}
 			queue: {name: 'dnsCheck'}
-			callback: [@Pd\Monitoring\Check\Consumers\DnsCheck, process]
+			callback: [@Pd\Monitoring\Check\Consumers\DnsACheck, process]
 		certificateCheck:
 			exchange: {name: 'certificateCheck', type: direct}
 			queue: {name: 'certificateCheck'}
@@ -132,7 +132,7 @@ services:
 		class: Pd\Monitoring\Check\Consumers\AliveCheck
 
 	-
-		class: Pd\Monitoring\Check\Consumers\DnsCheck
+		class: Pd\Monitoring\Check\Consumers\DnsACheck
 
 	-
 		class: Pd\Monitoring\Check\Consumers\CertificateCheck
@@ -162,7 +162,7 @@ services:
 			- @Kdyby\RabbitMq\Connection::getProducer('aliveCheck')
 
 	-
-		class: Pd\Monitoring\Check\Commands\Publish\DnsChecksCommand
+		class: Pd\Monitoring\Check\Commands\Publish\DnsAChecksCommand
 		tags:
 			- kdyby.console.command
 		arguments:

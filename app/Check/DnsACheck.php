@@ -7,13 +7,13 @@ namespace Pd\Monitoring\Check;
  * @property string $ip
  * @property string|NULL $lastIp
  */
-class DnsCheck extends Check
+class DnsACheck extends Check
 {
 
 	public function __construct()
 	{
 		parent::__construct();
-		$this->type = ICheck::TYPE_DNS;
+		$this->type = ICheck::TYPE_DNS_A;
 	}
 
 
@@ -29,7 +29,7 @@ class DnsCheck extends Check
 
 	public function getTitle(): string
 	{
-		return 'Nastavení DNS';
+		return 'Nastavení DNS A';
 	}
 
 

@@ -2,11 +2,11 @@
 
 namespace Pd\Monitoring\Check\Consumers;
 
-class DnsCheck extends Check
+class DnsACheck extends Check
 {
 
 	/**
-	 * @param \Pd\Monitoring\Check\Check|\Pd\Monitoring\Check\DnsCheck $check
+	 * @param \Pd\Monitoring\Check\Check|\Pd\Monitoring\Check\DnsACheck $check
 	 * @return bool
 	 */
 	protected function doHardJob(\Pd\Monitoring\Check\Check $check): bool
@@ -26,6 +26,6 @@ class DnsCheck extends Check
 
 	protected function getCheckType(): int
 	{
-		return \Pd\Monitoring\Check\ICheck::TYPE_DNS;
+		return \Pd\Monitoring\Check\ICheck::TYPE_DNS_A;
 	}
 }
