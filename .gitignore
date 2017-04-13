@@ -1,7 +1,6 @@
 /.vagrant
 /app/config/config.local.neon
 /build.zip
-/config/prod.neon
 
 !.gitignore
 !.htaccess
