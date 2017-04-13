@@ -2,6 +2,8 @@
 
 namespace Pd\Monitoring\DashBoard\Controls\AddEditCheck;
 
+use Pd\Monitoring\Check\DnsACheck;
+
 class DnsACheckProcessor implements ICheckControlProcessor
 {
 
@@ -28,6 +30,9 @@ class DnsACheckProcessor implements ICheckControlProcessor
 		$form
 			->addText('ip', 'IP adresa')
 			->setRequired(TRUE)
+			->addFilter(function($value) {
+				return DnsACheck::normalizeIpList($value);
+			})
 		;
 	}
 
