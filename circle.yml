@@ -1,0 +1,20 @@
+version: 2
+jobs:
+  build:
+    docker:
+    - image: mangoweb/ci-deploy:1.5
+
+    working_directory: ~/src
+
+    steps:
+      - checkout
+
+      - run:
+          name: Decrypt files
+          command: bash deploy/decrypt.sh
+      - run:
+          name: Setup Kubernetes access
+          command: bash deploy/setup-kube.sh
+      - run:
+          name: Deploy
+          command: bash deploy/deploy.sh
