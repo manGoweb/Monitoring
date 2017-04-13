@@ -1,0 +1,46 @@
+{
+	"name": "kdyby/github",
+	"type": "library",
+	"description": "Github API client with authorization for Nette Framework",
+	"keywords": ["nette", "kdyby", "github", "sdk", "authorization"],
+	"homepage": "http://kdyby.org",
+	"license": ["BSD-3-Clause", "GPL-2.0", "GPL-3.0"],
+	"authors": [
+		{
+			"name": "Filip Procházka",
+			"homepage": "http://filip-prochazka.com",
+			"email": "filip@prochazka.su"
+		}
+	],
+	"require": {
+		"nette/application": "2.2.*",
+		"nette/di": "2.2.*",
+		"nette/http": "2.2.*",
+
+		"kdyby/curl-ca-bundle": "~1.0",
+		"ext-curl": "*",
+		"ext-json": "*"
+	},
+	"require-dev": {
+		"nette/nette": "2.2.*",
+		"nette/bootstrap": "2.2.*",
+
+		"nette/tester": "@dev",
+		"jakub-onderka/php-parallel-lint": "~0.7"
+	},
+	"support": {
+		"email": "filip@prochazka.su",
+		"issues": "https://github.com/kdyby/github/issues"
+	},
+	"autoload": {
+		"psr-0": {
+			"Kdyby\\Github\\": "src/"
+		},
+		"classmap": [
+			"src/Kdyby/Github/exceptions.php"
+		]
+	},
+	"autoload-dev": {
+		"classmap": ["tests/KdybyTests/"]
+	}
+}

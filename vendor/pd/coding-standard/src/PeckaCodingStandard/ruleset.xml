@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<ruleset name="PeckaDesign">
+
+	<!-- Arrays -->
+	<rule ref="../../../../slevomat/coding-standard/SlevomatCodingStandard/Sniffs/Arrays/TrailingArrayCommaSniff.php"/>
+
+	<!-- Classes -->
+	<rule ref="Generic.Classes.DuplicateClassName"/>
+	<rule ref="Squiz.Classes.LowercaseClassKeywords"/>
+
+	<!-- Files -->
+	<rule ref="Generic.Files.ByteOrderMark"/>
+	<rule ref="Generic.Files.LineEndings"/>	
+	<rule ref="PSR2.Files.EndFileNewline"/>
+	<rule ref="Zend.Files.ClosingTag"/>
+	
+	<!-- Functions -->
+	<rule ref="Squiz.Functions.LowercaseFunctionKeywords"/>
+
+	<!-- NamingConventions -->
+	<rule ref="Generic.NamingConventions.UpperCaseConstantName"/>
+	<rule ref="Generic.NamingConventions.CamelCapsFunctionName">
+		<properties>
+			<property name="strict" value="0"/>
+		</properties>
+	</rule>
+
+	<!-- PHP -->
+	<rule ref="Generic.PHP.DeprecatedFunctions"/>
+	<rule ref="Generic.PHP.ForbiddenFunctions"/>
+	<rule ref="Generic.PHP.UpperCaseConstant"/>
+
+	<!-- WhiteSpace -->
+	<rule ref="Generic.WhiteSpace.DisallowSpaceIndent"/>
+
+</ruleset>
+

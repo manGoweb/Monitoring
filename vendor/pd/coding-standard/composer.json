@@ -1,0 +1,17 @@
+{
+    "name": "pd/coding-standard",
+    "description": "Coding standard pro PeckaDesign",
+    "require": {
+        "squizlabs/php_codesniffer": "^2.8",
+        "php": "7.*",
+        "slevomat/coding-standard": "2.*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Milan Pála",
+            "email": "milan.pala@peckadesign.cz"
+        }
+    ],
+    "minimum-stability": "stable"
+}
