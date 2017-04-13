@@ -2,11 +2,13 @@
 
 namespace Pd\Monitoring\Check\Commands\Publish;
 
-use Pd\Monitoring\Commands\TNamedCommand;
-
 class DnsAChecksCommand extends PublishChecksCommand
 {
-	use TNamedCommand;
+
+	protected function generateName(): string
+	{
+		return 'pd:monitoring:check:publish:dns-a-checks';
+	}
 
 	protected function getConditions(): array
 	{

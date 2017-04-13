@@ -21,15 +21,17 @@ function loop-every {
 php www/index.php migrations:continue
 php www/index.php rabbitmq:setup-fabric
 
-loop-every   60 pd:monitoring:check:publish:alive-checks
+loop-every   15 pd:monitoring:check:publish:alive-checks
 loop-every 1800 pd:monitoring:check:publish:certificate-checks
-loop-every  120 pd:monitoring:check:publish:dns-checks
+loop-every   60 pd:monitoring:check:publish:dns-a-checks
+loop-every   60 pd:monitoring:check:publish:dns-cname-checks
 loop-every  300 pd:monitoring:check:publish:feed-checks
 loop-every   60 pd:monitoring:check:publish:rabbit-consumer-checks
-loop-every   60 pd:monitoring:check:slack-check-statuses
+loop-every   10 pd:monitoring:check:slack-check-statuses
 
 loop rabbitmq:consume aliveCheck
 loop rabbitmq:consume dnsACheck
+loop rabbitmq:consume dnsCnameCheck
 loop rabbitmq:consume certificateCheck
 loop rabbitmq:consume feedCheck
 loop rabbitmq:consume rabbitConsumerCheck
