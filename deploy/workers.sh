@@ -21,13 +21,15 @@ function loop-every {
 php www/index.php migrations:continue
 php www/index.php rabbitmq:setup-fabric
 
-loop-every   90 pd:monitoring:check:publish:alive-checks
+# assuming 70 http checks, period of 350
+# averages to one monitoring request per 5 seconds
+loop-every  350 pd:monitoring:check:publish:alive-checks
 loop-every 1800 pd:monitoring:check:publish:certificate-checks
-loop-every  300 pd:monitoring:check:publish:dns-a-checks
-loop-every  300 pd:monitoring:check:publish:dns-cname-checks
-loop-every  300 pd:monitoring:check:publish:feed-checks
+loop-every  600 pd:monitoring:check:publish:dns-a-checks
+loop-every  600 pd:monitoring:check:publish:dns-cname-checks
+loop-every  600 pd:monitoring:check:publish:feed-checks
 loop-every   60 pd:monitoring:check:publish:rabbit-consumer-checks
-loop-every   15 pd:monitoring:check:slack-check-statuses
+loop-every   30 pd:monitoring:check:slack-check-statuses
 
 loop rabbitmq:consume aliveCheck
 loop rabbitmq:consume dnsACheck
